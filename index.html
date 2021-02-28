@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<style>
+html, body, div, a, img, table, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+span {
+    border: 0;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+}
+th, td {
+    font-size: 100%;
+    vertical-align: middle;
+}
+input {
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2px 3px;
+    vertical-align: middle;
+}
+input[type="text"] {
+    -moz-box-sizing: border-box;
+    -moz-transition: all .4s ease-in-out;
+    -ms-box-sizing: border-box;
+    -ms-transition: all .4s ease-in-out;
+    -webkit-box-sizing: border-box;
+    -webkit-transition: all .4s ease-in-out;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    transition: all .4s ease-in-out;
+    vertical-align: middle;
+    border: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%}
+img {
+    -moz-force-broken-image-icon: 1;
+    -ms-interpolation-mode: bicubic;
+    font-size: 1px;
+    line-height: 1px;
+}
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-width: 320px;
+}
+body {
+    background-color: #49a5bf;
+    color: #fff;
+    font: 10px "Roboto", "Cambria", "lucida grande", "lucida sans", Geneva, "sans-serif", tahoma, helvetica, arial;
+    line-height: 20px;
+    margin: 0 auto auto;
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    min-height: 100vh;
+    background: #0387d1;
+    background: -moz-linear-gradient(180deg, rgba(3, 135, 209, 1) 0%, rgba(1, 85, 132, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(3, 135, 209, 1) 0%, rgba(1, 85, 132, 1) 100%);
+    background: linear-gradient(180deg, rgba(3, 135, 209, 1) 0%, rgba(1, 85, 132, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0387d1", endColorstr="#015584", GradientType=1);
+    background-repeat: no-repeat;
+}
+@font-face {
+    font-family: 'onebanc_fonts';
+    src: url('fonts/onebanc_fonts.woff?q0q9wt') format('woff'), url('fonts/onebanc_fonts.ttf?q0q9wt') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+[class^="icon"], [class*=" icon"] {
+    font-family: 'onebanc_fonts' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconpayonebanc:before {
+    content: "p"}
+.iconrewardsonebanc:before {
+    content: "r"}
+.iconsavingsonebanc:before {
+    content: "s"}
+.iconanalyticsonebanc:before {
+    content: "a"}
+.iconinvestmentsonebanc:before {
+    content: "i"}
+.iconforexonebanc:before {
+    content: "f"}
+.iconcardonebanc:before {
+    content: "c"}
+.iconsupportonebanc:before {
+    content: "t"}
+.iconloanonebanc:before {
+    content: "l"}
+.logo {
+    max-width: 450px;
+    width: 100%;
+    margin-top: 8%}
+.link {
+    text-decoration: none;
+    color: #fff;
+}
+.section {
+    width: 33%;
+    padding-left: 3%;
+    float: left !important;
+}
+.section .title {
+    font-size: 7.5em;
+    line-height: 1em;
+    position: relative;
+}
+.section .title .writer_container {
+    position: absolute;
+    bottom: 0;
+    height: 1em;
+}
+.section .description {
+    padding-right: 100px;
+}
+.section .description, .section .invite_container {
+    font-size: 1.8em;
+    line-height: 1.4em;
+}
+.store_icon.qrcode {
+    margin-left: -3px;
+}
+.group_input {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 4px;
+    padding-right: 60px;
+}
+.group_input .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+    height: 100%;
+    background: #00d1eb;
+    background: -moz-linear-gradient(left, #00d1eb 0%, #00e8d7 100%);
+    background: -webkit-linear-gradient(left, #00d1eb 0%, #00e8d7 100%);
+    background: linear-gradient(to right, #00d1eb 0%, #00e8d7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00d1eb', endColorstr='#00e8d7', GradientType=1);
+    cursor: pointer;
+    width: 60px;
+}
+.group_input .btn .arrow {
+    width: 25px;
+    padding-left: 17px;
+    padding-top: 5px;
+}
+.group_input .btn .loader {
+    display: none;
+    opacity: 0;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.group_input .btn .loader .dot {
+    background-color: #0a99bc;
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    top: 15px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    left: 12px;
+    -webkit-transition: all .2s linear .1s;
+    -moz-transition: all .2s linear .1s;
+    -o-transition: all .2s linear .1s;
+    transition: all .2s linear .1s;
+}
+.group_input .btn .dot.d2 {
+    left: 26px;
+}
+.group_input .btn .dot.d3 {
+    left: 41px;
+}
+.group_input .btn .dot.c1 {
+    background-color: #134e9f;
+}
+.group_input .btn .dot.c2 {
+    background-color: #0f6bac;
+}
+.group_input .btn .dot.c3 {
+    background-color: #0a99bc;
+}
+.group_input .btn.loadingstate .arrow {
+    display: none;
+}
+.group_input .btn.loadingstate .loader {
+    opacity: 1;
+    display: block;
+}
+.group_input span.symbol.arrow::after {
+    position: absolute;
+    top: 0;
+    content: "â†’";
+    right: 16px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 32px;
+    cursor: pointer;
+}
+.group_input input[type=text] {
+    width: 100%;
+    padding: 10px 9px;
+}
+#invite_submit_form, #invite_submit_response {
+    padding: 12px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background-color: #004da3;
+    max-width: 360px;
+    min-width: 360px;
+}
+#email_errbox {
+    background-color: #d70000;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 1px 5px;
+    position: absolute;
+    top: 8px;
+    right: 67px;
+    font-size: 14px;
+    line-height: 19px;
+    display: none;
+}
+#email_errbox.show {
+    display: block;
+    animation: shake .7s;
+    transform: translate(0, 0);
+}
+@keyframes shake {
+    10%, 90% {
+    transform: translate(-1px, 0);
+}
+20%, 80% {
+    transform: translate(2px, 0);
+}
+30%, 50%, 70% {
+    transform: translate(-1px, 0);
+}
+40%, 60% {
+    transform: translate(2px, 0);
+}
+}.side_trim {
+    width: 3%}
+.spacer {
+    clear: both;
+    height: 16px;
+}
+.spacer.big {
+    height: 32px;
+}
+.feature_table {
+    position: relative;
+    margin: 0 auto;
+    right: 0;
+    top: 21%;
+    width: 75%}
+.bg_cloud_canvas {
+    display: block;
+    height: 100vh;
+    min-height: 800px;
+}
+.feature_container {
+    display: none;
+}
+.divcol {
+    float: right;
+    height: 100vh;
+    min-height: 800px;
+}
+.visual_content_holder {
+    width: 54%;
+    height: 100vh;
+    position: relative;
+    background-color: #fff;
+}
+.visual_content_holder .vc_regularbank_man_td, .visual_content_holder .vc_onebanc_man_td {
+    width: 46%}
+.visual_content_holder .vc_regularbank_man_td {
+    text-align: center;
+}
+.visual_content_holder .vc_onebank_man, .visual_content_holder .vc_regularbank_man {
+    position: relative;
+}
+.visual_content_holder .feature_container, .vc_onebank_man_mob_container .feature_container {
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    color: #000;
+}
+.visual_content_holder .hideFeatures .feature_container, .vc_onebank_man_mob_container.hideFeatures .feature_container {
+    display: none;
+}
+.visual_content_holder .feature_container .icon {
+    font-size: 5em;
+    color: #666;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.visual_content_holder .feature_container .title {
+    font-size: .9em;
+    line-height: .5em;
+    color: #444;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.visual_content_holder .pic_man {
+    width: 100%}
+.visual_content_holder .vc_regularbank_man, .visual_content_holder .vc_onebank_man {
+    display: inline-block;
+}
+.visual_content_holder .vc_regularbank_man .feature_container.analytics {
+    left: -1%;
+    top: -21%}
+.visual_content_holder .vc_regularbank_man .feature_container.forex {
+    left: -36%;
+    top: -8%}
+.visual_content_holder .vc_regularbank_man .feature_container.investments {
+    left: -48%;
+    top: 9%}
+.visual_content_holder .vc_regularbank_man .feature_container.savings {
+    bottom: 62%;
+    left: -43%}
+.visual_content_holder .vc_regularbank_man .feature_container.rewards {
+    top: 45%;
+    left: -18%}
+.visual_content_holder .vc_regularbank_man .feature_container.cards {
+    top: -21%;
+    right: 33%}
+.visual_content_holder .vc_regularbank_man .feature_container.payments {
+    top: -10%;
+    right: -8%}
+.visual_content_holder .vc_regularbank_man .feature_container.payments .icon {
+    padding-bottom: 6px;
+}
+.visual_content_holder .vc_regularbank_man .feature_container.loan {
+    top: 8%;
+    right: -21%}
+.visual_content_holder .vc_regularbank_man .feature_container.support {
+    bottom: 63%;
+    right: -22%}
+.visual_content_holder .vc_onebank_man .feature_container .icon {
+    font-size: 4em;
+}
+.visual_content_holder .vc_onebank_man .feature_container.analytics {
+    top: -22%;
+    right: -30%}
+.visual_content_holder .vc_onebank_man .feature_container.forex {
+    top: -26%;
+    right: 2%}
+.visual_content_holder .vc_onebank_man .feature_container.investments {
+    top: -23%;
+    right: 39%}
+.visual_content_holder .vc_onebank_man .feature_container.savings {
+    top: -12%;
+    right: 2%}
+.visual_content_holder .vc_onebank_man .feature_container.rewards {
+    top: -13%;
+    right: 25%}
+.visual_content_holder .vc_onebank_man .feature_container.cards {
+    top: 11%;
+    right: 3%}
+.visual_content_holder .vc_onebank_man .feature_container.payments {
+    top: 0;
+    right: -3%}
+.visual_content_holder .vc_onebank_man .feature_container.payments .icon {
+    padding-bottom: 4px;
+}
+.visual_content_holder .vc_onebank_man .feature_container.loan {
+    top: -1%;
+    right: 12%}
+.visual_content_holder .vc_onebank_man .feature_container.support {
+    top: -11%;
+    right: -18%}
+.visual_content_holder .vc_onebank_man .vc_funnel {
+    position: absolute;
+}
+.visual_content_holder .vc_onebank_man .vc_funnel.right {
+    top: -6%;
+    right: -31%}
+.visual_content_holder .vc_onebank_man .vc_funnel.right.small {
+    top: -20%;
+    right: -8%;
+    width: 8%}
+.visual_content_holder .vc_onebank_man .vc_funnel.left {
+    top: -6%;
+    right: 19%;
+    transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+.visual_content_holder .vc_onebank_man .vc_funnel.left.small {
+    top: -17%;
+    right: 18%;
+    width: 10%}
+.visual_content_holder .bank_title {
+    font-family: 'Comic Sans MS', "Roboto", "Cambria", "lucida grande", "lucida sans", Geneva, "sans-serif", tahoma, helvetica, arial;
+    font-size: 2.5em;
+    color: #000;
+    position: absolute;
+    bottom: -5%;
+    width: 100%;
+    text-align: center;
+    left: 8%}
+.visual_content_holder .vc_onebank_man .bank_title {
+    left: -16%}
+.mob_show, .portrait_footer_gutter {
+    display: none;
+}
+#browser_support {
+    font-size: 5em;
+    text-align: center;
+    line-height: 1em;
+    padding: 200px 0;
+    display: none;
+}
+#invite_submit_response {
+    background-repeat: no-repeat;
+}
+#invite_submit_response.johny_1 {
+    background-image: url(../pics/ico_johny_1.png);
+    padding: 20px 20px 25px 70px;
+    background-size: 45px;
+    background-position: 15px 8px;
+}
+#invite_submit_response.johny_2 {
+    background-image: url(../pics/ico_johny_2.png);
+    padding: 26px 25px 25px 65px;
+    background-size: 31px;
+    background-position: 18px 16px;
+}
+#invite_submit_response.iron_man {
+    background-image: url(../pics/ico_iron_man.png);
+    padding: 30px 25px 30px 90px;
+    background-size: 60px;
+    background-position: 15px 12px;
+}
+#invite_submit_response.avengers {
+    background-image: url(../pics/ico_avengers.png);
+    background-position: center;
+    background-position-y: center;
+    text-align: center;
+    padding: 10px 25px 83px 20px;
+    background-position-y: 42px;
+    background-size: 225px;
+    font-size: .85em;
+}
+.feature_container.selected .icon {
+    font-size: 6em;
+    color: #000;
+    text-shadow: 1px 1px 4px #848484;
+}
+.vc_onebank_man .feature_container.selected .icon {
+    font-size: 4.3em;
+}
+.feature_container.selected .title {
+    font-size: 1.1em;
+    color: #000;
+}
+#cursor {
+    font-weight: 300;
+    position: absolute;
+    top: -4px;
+    right: -15px;
+    -webkit-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    -o-transition: all .15s ease;
+    transition: all .15s ease;
+}
+#email_err {
+    font-size: .8em;
+    display: none;
+    line-height: 1.3em;
+    padding-top: 5px;
+    font-style: italic;
+    margin-bottom: -4px;
+}
+#page_container {
+    min-height: 100vh;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+.copyright {
+    font-size: 1.2em;
+}
+.footer {
+    clear: both;
+}
+.flipper {
+    perspective: 1000px;
+}
+.flipper.flip .invite_container {
+    transform: rotateY(180deg);
+}
+.flipper.show #invite_submit_response {
+    left: 0 !important;
+    transform: none !important;
+}
+.invite_container {
+    transition: .6s;
+    transform-style: preserve-3d;
+    position: relative;
+    min-height: 110px;
+}
+#invite_submit_form, #invite_submit_response {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#invite_submit_response {
+    right: 0;
+    left: auto;
+    min-width: unset !important;
+    min-height: 66px;
+}
+#invite_submit_form {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+#invite_submit_response {
+    transform: rotateY(180deg);
+}
+@media screen and (max-width:1600px) {
+    .section {
+    width: 31%}
+.feature_table {
+    right: 4%;
+    top: 19%}
+.visual_content_holder .vc_regularbank_man_td {
+    width: 35%}
+.visual_content_holder .vc_onebanc_man_td {
+    width: 43%}
+.visual_content_holder .feature_container .icon {
+    font-size: 4em;
+}
+.section .title {
+    font-size: 5.5em;
+}
+.visual_content_holder .vc_onebank_man .feature_container .icon {
+    font-size: 3.5em;
+}
+.feature_container.selected .icon {
+    font-size: 4.8em;
+}
+.vc_onebank_man .feature_container.selected .icon {
+    font-size: 3.8em;
+}
+.visual_content_holder .vc_onebank_man .vc_funnel.right {
+    right: -36%}
+.visual_content_holder .vc_onebank_man .feature_container.cards {
+    top: 15%;
+    right: 4%}
+.visual_content_holder .vc_onebank_man .feature_container.loan {
+    top: 2%;
+    right: 14%}
+.visual_content_holder .vc_onebank_man .feature_container.payments {
+    top: 1.5%;
+    right: -5%}
+.visual_content_holder .vc_onebank_man .feature_container.rewards {
+    top: -11%;
+    right: 26%}
+.visual_content_holder .vc_onebank_man .feature_container.support {
+    top: -10%}
+.visual_content_holder .vc_onebank_man .feature_container.savings {
+    top: -11%}
+.visual_content_holder .vc_onebank_man .vc_funnel.left.small {
+    top: -16%}
+.visual_content_holder .vc_onebank_man .vc_funnel.right.small {
+    top: -16%}
+.visual_content_holder .vc_onebank_man .feature_container.investments {
+    top: -21%;
+    right: 40%}
+.visual_content_holder .vc_onebank_man .feature_container.forex {
+    top: -24%}
+.visual_content_holder .vc_onebank_man .feature_container.analytics {
+    top: -21%}
+}@media screen and (min-width:2000px) {
+    body {
+    background: #015584;
+    background: -moz-linear-gradient(90deg, rgba(1, 85, 132, 1) 0%, rgba(96, 159, 196, 1) 70%, rgba(255, 255, 255, 1) 70%);
+    background: -webkit-linear-gradient(90deg, rgba(1, 85, 132, 1) 0%, rgba(96, 159, 196, 1) 70%, rgba(255, 255, 255, 1) 70%);
+    background: linear-gradient(90deg, rgba(1, 85, 132, 1) 0%, rgba(96, 159, 196, 1) 70%, rgba(255, 255, 255, 1) 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#015584", endColorstr="#ffffff", GradientType=1);
+}
+}@media screen and (max-width:1400px) {
+    .visual_content_holder .vc_onebank_man .vc_funnel.right {
+    right: -39%}
+}@media screen and (max-width:1360px) {
+    .visual_content_holder .vc_onebank_man .feature_container .icon {
+    font-size: 3em;
+}
+.vc_onebank_man .feature_container.selected .icon {
+    font-size: 3.2em;
+}
+.feature_container.selected .title {
+    font-size: 1em;
+}
+}@media screen and (max-width:1300px) {
+    .section .description {
+    padding-right: 40px;
+}
+#cursor {
+    top: -2px;
+    right: -12px;
+}
+.feature_table {
+    top: 15%}
+.visual_content_holder .bank_title {
+    font-size: 2em;
+    bottom: -8%}
+.section .title {
+    font-size: 5em;
+}
+.section .description, .section .invite_container {
+    font-size: 1.4em;
+    max-width: 385px;
+}
+#invite_submit_response.johny_2 {
+    background-position: 18px 10px;
+}
+}@media screen and (max-width:1260px) {
+    .section {
+    width: 29%;
+    padding-left: 2%}
+.visual_content_holder .vc_onebank_man .vc_funnel.right {
+    right: -27%;
+    width: 28%;
+    top: 1%}
+.visual_content_holder .vc_onebank_man .vc_funnel.left {
+    top: 2%;
+    right: 18%;
+    width: 28%}
+.visual_content_holder .vc_onebank_man .feature_container .icon {
+    font-size: 2.5em;
+}
+.visual_content_holder .feature_container .icon {
+    font-size: 3.3em;
+}
+.feature_container.selected .icon {
+    font-size: 3.5em;
+}
+.vc_onebank_man .feature_container.selected .icon {
+    font-size: 2.6em;
+}
+.feature_container.selected .title {
+    font-size: .85em;
+}
+.visual_content_holder .vc_regularbank_man .feature_container.savings {
+    bottom: 60%}
+.visual_content_holder .vc_onebank_man .feature_container.payments {
+    top: .5%;
+    right: -5%}
+.visual_content_holder .vc_onebank_man .feature_container.loan {
+    top: -.5%;
+    right: 16%}
+.visual_content_holder .vc_onebank_man .feature_container.support {
+    right: -23%;
+    top: -12%}
+.visual_content_holder .vc_onebank_man .feature_container.savings {
+    top: -14%}
+.visual_content_holder .vc_onebank_man .feature_container.rewards {
+    top: -13%;
+    right: 29%}
+.visual_content_holder .vc_onebank_man .feature_container.investments {
+    top: -24%;
+    right: 45%}
+.visual_content_holder .vc_onebank_man .feature_container.forex {
+    top: -28%}
+.visual_content_holder .vc_onebank_man .feature_container.analytics {
+    top: -24%;
+    right: -40%}
+.visual_content_holder .vc_onebank_man .feature_container.cards {
+    top: 14%;
+    right: 3%}
+.visual_content_holder .vc_onebank_man .vc_funnel.left.small {
+    top: -21%;
+    right: 24%}
+.visual_content_holder .vc_onebank_man .vc_funnel.right.small {
+    top: -20%;
+    right: -9%}
+}@media screen and (max-width:1080px) {
+    html {
+    overflow-y: scroll;
+}
+.logo {
+    width: 85%;
+    max-width: 330px;
+    margin-top: 3%}
+.mob_hide {
+    display: none;
+}
+.group_input {
+    width: 82%}
+.mob_show {
+    display: inline-block;
+}
+.divcol {
+    height: auto;
+}
+.section {
+    width: 100%;
+    padding: 0 0 0 3%}
+.section .title {
+    font-size: 5em;
+    line-height: 1em;
+}
+.section .description {
+    padding-right: 20px;
+}
+.section .description, .section .invite_container {
+    font-size: 1.5em;
+    line-height: 1.3em;
+}
+.visual_content_holder {
+    display: none;
+}
+.main {
+    float: left;
+}
+.mob_man_section {
+    width: 45%;
+    padding: 3% 8% 0 0;
+    float: right;
+    text-align: center;
+}
+.mob_man_section .vc_onebank_man_mob_container {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    width: 92%;
+    max-width: 320px;
+}
+.mob_man_section .vc_onebank_man_mob_container .vc_onebank_man_mob {
+    width: 100%}
+.mob_man_section .vc_onebank_man_mob_container .icon {
+    font-size: 3.5em;
+    color: #fff !important;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.mob_man_section .vc_onebank_man_mob_container .title {
+    font-size: .8em;
+    line-height: .5em;
+    color: #fff !important;
+}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.loan {
+    left: -10%;
+    top: -1%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.rewards {
+    left: 40%;
+    top: -29%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.support {
+    left: 11%;
+    top: -23%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.payments {
+    bottom: 55%;
+    left: -20%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.cards {
+    bottom: 19%;
+    left: -22%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.investments {
+    top: -3%;
+    right: -10%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.savings {
+    top: -24%;
+    right: 17%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.analytics {
+    bottom: 20%;
+    right: -19%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.forex {
+    bottom: 55%;
+    right: -16%}
+.vc_onebank_man_mob_container .feature_container.selected .icon {
+    text-shadow: 1px 1px 3px #c2cfd7;
+    font-size: 3.8em;
+}
+.feature_container.selected .title {
+    font-size: 1em;
+}
+}@media screen and (min-width:640px) and (orientation:portrait), (min-width:640px) and (max-width:1100px) and (min-height:700px) {
+    #page_container {
+    position: relative;
+    background: #015584;
+    background: -moz-linear-gradient(180deg, rgba(3, 135, 209, 1) 0%, rgba(96, 159, 196, 1) 30%, rgba(207, 225, 236, 1) 45%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(3, 135, 209, 1) 0%, rgba(96, 159, 196, 1) 30%, rgba(207, 225, 236, 1) 45%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(180deg, rgba(3, 135, 209, 1) 0%, rgba(96, 159, 196, 1) 30%, rgba(207, 225, 236, 1) 45%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#015584", endColorstr="#ffffff", GradientType=1);
+    max-width: none;
+}
+#invite_submit_form, #invite_submit_response {
+    background-color: #2a6db7;
+}
+#invite_submit_response.johny_2 {
+    font-size: .95em !important;
+}
+.mob_hide {
+    display: none;
+}
+#email_err {
+    font-size: .9em;
+}
+.logo {
+    max-width: 900px !important;
+    width: 50% !important;
+}
+.section .title {
+    font-size: 6em;
+}
+.divcol {
+    float: none !important;
+    height: auto;
+    min-height: 0;
+    width: auto;
+}
+.visual_content_holder {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    padding-bottom: 8%}
+.mob_man_section {
+    display: none;
+}
+.feature_table {
+    width: 67%;
+    right: unset;
+    padding-top: 14%}
+.main {
+    text-align: left;
+    display: inline-block;
+    float: none;
+    width: 50% !important;
+    max-width: 900px;
+}
+.section {
+    text-align: center;
+    padding: 0;
+}
+.portrait_footer_gutter {
+    display: block;
+    height: 201px;
+    background-color: #161616;
+}
+.footer {
+    position: absolute;
+    bottom: -201px;
+    width: 100%}
+.footer .cp_spacer {
+    height: 5px !important;
+}
+.visual_content_holder .feature_container .icon {
+    font-size: 4em;
+}
+.visual_content_holder .vc_onebank_man .feature_container .icon {
+    font-size: 3.4em;
+}
+.feature_container.selected .icon {
+    font-size: 4.4em;
+}
+.vc_onebank_man .feature_container.selected .icon {
+    font-size: 3.7em;
+}
+.feature_container.selected .title {
+    font-size: 1.1em;
+}
+.visual_content_holder .vc_regularbank_man .feature_container.savings {
+    bottom: 63%}
+.visual_content_holder .vc_regularbank_man .feature_container.loan {
+    top: 10%}
+html {
+    overflow-y: scroll;
+}
+}@media screen and (max-width:820px) {
+    .logo {
+    width: 70%;
+    padding-top: 4%}
+.main {
+    width: 40%}
+.mob_man_section {
+    padding: 1% 11% 5% 5%;
+    width: 40%}
+.mob_man_section .vc_onebank_man_mob_container .icon {
+    font-size: 3em;
+}
+.visual_content_holder .vc_onebank_man .feature_container .icon {
+    font-size: 3.1em;
+}
+.vc_onebank_man .feature_container.selected .icon {
+    font-size: 3.4em;
+}
+.visual_content_holder .vc_onebank_man .vc_funnel.left {
+    right: 20%}
+.visual_content_holder .feature_container .icon {
+    font-size: 3.5em;
+}
+.feature_container.selected .icon {
+    font-size: 3.7em;
+}
+.feature_container.selected .title {
+    font-size: .9em;
+}
+#invite_submit_response.johny_2 {
+    font-size: .85em;
+}
+}@media screen and (max-width:740px) and (orientation:landscape) {
+    .logo {
+    max-width: 270px !important;
+}
+}@media screen and (max-width:740px) {
+    .logo {
+    width: 45%}
+.section .title {
+    font-size: 4em;
+    line-height: 1em;
+}
+.section .description, .section .invite_container {
+    font-size: 1.5em;
+    line-height: 1.3em;
+}
+.spacer.big {
+    height: 20px;
+}
+#invite_submit_response.johny_2 {
+    font-size: .8em;
+}
+}@media screen and (max-width:640px) {
+    .logo {
+    width: 58%}
+.section {
+    width: 95%}
+.main {
+    width: 97%;
+    float: none;
+}
+.mob_man_section {
+    width: 92%;
+    float: none;
+    padding-top: 21%}
+.vc_onebank_man_mob_container .feature_container.selected .title {
+    font-size: 1em;
+}
+.footer {
+    text-align: center;
+}
+#invite_submit_response.johny_2 {
+    font-size: 1em;
+}
+}@media screen and (max-width:480px) {
+    .mob_man_section .vc_onebank_man_mob_container {
+    width: 78%}
+.vc_onebank_man_mob_container .feature_container.selected .icon {
+    font-size: 3.2em;
+}
+}@media screen and (max-width:400px) {
+    .group_input {
+    width: 80%}
+#invite_submit_form, #invite_submit_response {
+    min-width: 275px;
+}
+}@media screen and (max-width:360px) {
+    .group_input {
+    width: 78%}
+.mob_man_section .vc_onebank_man_mob_container .feature_container.investments {
+    top: -8%;
+    right: -13%}
+#invite_submit_response.avengers {
+    font-size: .8em;
+}
+#invite_submit_response.johny_2 {
+    font-size: .85em;
+}
+}@media screen and (max-width:320px) {
+    html {
+    overflow-x: scroll;
+}
+}@media screen and (max-height:800px) {
+    .feature_table {
+    top: 16%}
+.logo {
+    width: 85%;
+    max-width: 330px;
+}
+html {
+    overflow-y: scroll;
+}
+}
+</style>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="OneBanc is a neobank that provides digital and mobile-first banking and financial solutions. We are a technology interface between customer and our bank partners. Using our advance technology platform, customer activity is captured across channels and analytics are used to maximize customers’ lifetime value across all product lines.">
+    <meta name="keywords" content="banking, banking technology, fintech, financial technology, IT, bank, AI, invest, rewards, banking, salary account, payments, ai card, neobank, experiential banking, bank roi, bank casa">
+    <meta property="og:title" content="OneBanc - EARN | TRACK | INVEST | GROW">
+    <meta property="og:description" content="We are a neo Bank and here to reimagine and reinvent banking.">
+    <meta property="og:image" content="logo_onebanc.png">
+    <title>OneBanc - EARN | TRACK | INVEST | GROW</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/home.min.css" type="text/css" />
+    <script type="text/javascript">
+        var ldst = Date.now();
+        function onManImgLoad(domElement) {
+            removeClass(domElement.parentElement, "hideFeatures");
+        }
+
+        function removeClass(domElem, cls) {
+            var classes = domElem.className.split(" ");
+            classes.splice(classes.indexOf(cls), 1);
+            domElem.className = classes.join(" ");
+        }
+    </script>
+</head>
+<body>
+    <div id="browser_support">
+        .<br /><span style="font-size:0.5em"></span>
+        <br /><br /><br />
+        <img src="logo_onebanc.png" class="logo" alt="OneBanc - EARN | TRACK | INVEST | GROW" /><br />
+        <span style="font-size:.6em">We are a Neo Bank,  We are cool and simply awesome!</span><br />
+    </div>
+    <div id="page_container">
+        <div class="section divcol">
+            <img src="logo_onebanc.png" class="logo" alt="OneBanc - EARN | TRACK | INVEST | GROW" />
+            <div style="clear:both"></div>
+            <div class="main">
+                <div class="big spacer"></div>
+                <div class="title">
+                    <br>
+                    
+                             RE:
+                    
+                             THINK
+                    <br >
+                    <br>
+                    <div class="writer_container">
+                        <span id="feature_txt"></span><span id="cursor">|</span>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="description">
+                     We are a Neo Bank
+                 <span class="mob_show">,</span> 
+                <span class="mob_hide">and are here to re-imagine and re-invent Banking. We are</span> cool and simply awesome!
+                </div>
+                <div class="big spacer"></div>
+                <div id="flipper_container" class="flipper">
+                    <div class="invite_container">
+                        <div id="invite_submit_form">
+                            Get an early invitation for our Beta release.
+                            <br />
+                            <div class="group_input">
+                                <input type="text" id="inp_eml" placeholder="Enter Email Address" maxlength="64" />
+                                <div class="btn" id="btn_sub">
+                                    <div class="loader">
+                                        <div class="dot c1">&nbsp;</div>
+                                        <div class="dot d2 c2">&nbsp;</div>
+                                        <div class="dot d3 c3">&nbsp;</div>
+                                    </div>
+                                    <img class="arrow" src="arrow.jpg" >
+
+                                    <g>
+                                        <path d="M508.875,248.458l-160-160c-3.063-3.042-7.615-3.969-11.625-2.313c-3.99,1.646-6.583,5.542-6.583,9.854v21.333    c0,2.833,1.125,5.542,3.125,7.542l109.792,109.792H10.667C4.771,234.667,0,239.437,0,245.333v21.333    c0,5.896,4.771,10.667,10.667,10.667h432.917L333.792,387.125c-2,2-3.125,4.708-3.125,7.542V416c0,4.313,2.594,8.208,6.583,9.854    c1.323,0.552,2.708,0.813,4.083,0.813c2.771,0,5.5-1.083,7.542-3.125l160-160C513.042,259.375,513.042,252.625,508.875,248.458z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                                    </g></g></g> </svg>
+                                </div>
+                                <div id="email_errbox">Invalid</div>
+                            </div>
+                            <div id="email_err">Invalid Email !!!</div>
+                        </div>
+                        <div id="invite_submit_response">Thanks for sharing your email,<br />we will get back to you soon!</div>
+                    </div>
+                </div>
+
+                <div class="big spacer"></div>
+            </div>
+            <div class="mob_man_section mob_show">
+                <div class="vc_onebank_man_mob_container hideFeatures">
+                    <img src="onebanc_man_mob.png" class="vc_onebank_man_mob" onload="onManImgLoad(this)" />
+                    <div class="feature_container analytics">
+                        <div class="icon">a</div>
+                        <div class="title">Analytics</div>
+                    </div>
+                    <div class="feature_container forex">
+                        <div class="icon">f</div>
+                        <div class="title">Forex</div>
+                    </div>
+                    <div class="feature_container investments">
+                        <div class="icon">i</div>
+                        <div class="title">Investments</div>
+                    </div>
+                    <div class="feature_container savings">
+                        <div class="icon">s</div>
+                        <div class="title">Savings</div>
+                    </div>
+                    <div class="feature_container rewards">
+                        <div class="icon">r</div>
+                        <div class="title">Rewards</div>
+                    </div>
+                    <div class="feature_container cards">
+                        <div class="icon">c</div>
+                        <div class="title">Cards</div>
+                    </div>
+                    <div class="feature_container payments">
+                        <div class="icon">p</div>
+                        <div class="title">Payments</div>
+                    </div>
+                    <div class="feature_container loan">
+                        <div class="icon">l</div>
+                        <div class="title">Loan</div>
+                    </div>
+                    <div class="feature_container support">
+                        <div class="icon">t</div>
+                        <div class="title">Support</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <img src="qr_code.png" class="store_icon qrcode" alt="Coming soon on Google Play & IOS APP Store" />
+                <div class="big spacer cp_spacer"></div>
+                <div><a class="link" href="static/tnc.html" target="_blank">Terms & Conditions</a> | <a class="link" href="static/privacypolicy.html" target="_blank">Privacy Policy</a></div>
+                <div class="copyright">2021 &copy; OneBanc Technologies Pvt. Ltd.</div>
+                <div class="spacer"></div>
+            </div>
+        </div>
+        <div class="visual_content_holder divcol">
+            <div style="position:relative; height:100%;">
+                <table class="feature_table">
+                    <tr>
+                        <td class="vc_regularbank_man_td">
+                            <div class="vc_regularbank_man hideFeatures">
+                                <img class="pic_man" src="regular_bank.png" onload="onManImgLoad(this)" />
+                                <div class="feature_container analytics">
+                                    <div class="icon">a</div>
+                                    <div class="title">Analytics</div>
+                                </div>
+                                <div class="feature_container forex">
+                                    <div class="icon">f</div>
+                                    <div class="title">Forex</div>
+                                </div>
+                                <div class="feature_container investments">
+                                    <div class="icon">i</div>
+                                    <div class="title">Investments</div>
+                                </div>
+                                <div class="feature_container savings">
+                                    <div class="icon">s</div>
+                                    <div class="title">Savings</div>
+                                </div>
+                                <div class="feature_container rewards">
+                                    <div class="icon">r</div>
+                                    <div class="title">Rewards</div>
+                                </div>
+                                <div class="feature_container cards">
+                                    <div class="icon">c</div>
+                                    <div class="title">Cards</div>
+                                </div>
+                                <div class="feature_container payments">
+                                    <div class="icon">p</div>
+                                    <div class="title">Payments</div>
+                                </div>
+                                <div class="feature_container loan">
+                                    <div class="icon">l</div>
+                                    <div class="title">Loan</div>
+                                </div>
+                                <div class="feature_container support">
+                                    <div class="icon">t</div>
+                                    <div class="title">Support</div>
+                                </div>
+                                <div class="bank_title">#RegularBank</div>
+                            </div>
+                        </td>
+                        <td style="text-align:center">
+                            <img class="vc_dottedline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAJoCAYAAABMRjAxAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo4NzRhYzAwMS0zZjNhLTQ4MzMtOTBkMy01YzY3YjgyYWMzZjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTIwQzJDOEIyM0IyMTFFQTgyNkVERkY4OTU4OTdCNTUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTIwQzJDOEEyM0IyMTFFQTgyNkVERkY4OTU4OTdCNTUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZDIyZmYzZTktMjJlMy00ZWMyLTlhYWMtY2UxM2QwNjRhZjY2IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6NTYzOTJlZmYtOWI5OS0yYjQ3LTlhOTQtZTk0NTdlZTgyOTRhIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/ZMvSwAAAxRJREFUeNrEWEFrE0EY3dnZbJtqGpuqqAjWg1QUQQVPHhQtioh3EepZPHrxJF4Fr/4Ab4JHwZMXD54MehQsCIpIK2gVWt1sYnb93jJvyJJWMWb7BV74dmeSffNmvm/erAmCYK/gWChfsWAGQSboIsAnZxAgyHmn+AG+IoE18rVN0DR5nvvOWxUE7qEGNPYI5tG0T3COwzEkH1ZCA/+cIagJGgh+CVbBpy6YVpEFT7fghCk6LFhA037BBQRdsCR5W5ksxWqZFLTApYFlQ2KRmizg04AspwWLaNolOImgI0i3SBasjVnr7n4xjpxRk2XGCREsCl6haRoFgrL02Lm2cXH4z8AwPSdQTSDLd8FLFTVKshwVHMfFHa4NP/YeA1CMOIqxyhJR8FTw07gUnlOttEXBPy+4hKv7HHLKztnIC6AIphjYwZQpd44ZrAg+4KezgFrugM92zNV1wRXcfURZOoOVtmI+qGwRZNuN1UlisZosmJQmLu4J2mg6gowqVdoxDLnzl9SDOYmtm4L3rLRWTZZ5N0PBE6xeNO0UJAj6ADubavlgA5oEnwW13CnJchlTheAtUiZi0Ru9pExR1ZieNt9c1XCwqtdA40QRaFbaCDRuC75i9b6gJ1nluMb10JAOts5/9tkUs+k15gO3W2hSyx2fyw9hTrBIrgm+DXXOq+fzA8FTOBUS05PlAJ4OWZ4hqdF0ikFAc+I5B5zTcdLwgmfWVf53xhmYUE2Wi4LP1pWUFZqKtForu7EsxezAriwxu/VkuSF4Az5twaeh7cZWL0vfH7LA54xgXbXSFgX/ruAjZHnOfadHd5GPtB3D5NT5QsBufh40dCmFLG1a/R2q50HsnhMIHpDPMuwTXbflNpGNbvW7fI+UUKhhFweDF2JS5tDPuBOi3tuDFt8e3BKcxd3H5LzGGfyDF/VjT3ngTf7lxZQpnYmss0b+7YFeScGx9BAubrLSQqMmgnUYGJI3Q6PIKUJCp1c2wP5XfZ6kuoNZWX4h6Sst/nBJ39NiHzwYug36KkeRsDgsDx0M/UjXWH+S3wIMAFLnAEYLxRAIAAAAAElFTkSuQmCC" />
+                        </td>
+                        <td class="vc_onebanc_man_td">
+                            <div class="vc_onebank_man hideFeatures">
+                                <img class="pic_man" src="onebanc_man.png" onload="onManImgLoad(this)" />
+                                <div class="feature_container analytics">
+                                    <div class="icon">a</div>
+                                    <div class="title">Analytics</div>
+                                </div>
+                                <div class="feature_container forex">
+                                    <div class="icon">f</div>
+                                    <div class="title">Forex</div>
+                                </div>
+                                <div class="feature_container investments">
+                                    <div class="icon">i</div>
+                                    <div class="title">Investments</div>
+                                </div>
+                                <div class="feature_container savings">
+                                    <div class="icon">s</div>
+                                    <div class="title">Savings</div>
+                                </div>
+                                <div class="feature_container rewards">
+                                    <div class="icon">r</div>
+                                    <div class="title">Rewards</div>
+                                </div>
+                                <div class="feature_container cards">
+                                    <div class="icon">c</div>
+                                    <div class="title">Cards</div>
+                                </div>
+                                <div class="feature_container payments">
+                                    <div class="icon">p</div>
+                                    <div class="title">Payments</div>
+                                </div>
+                                <div class="feature_container loan">
+                                    <div class="icon">l</div>
+                                    <div class="title">Loan</div>
+                                </div>
+                                <div class="feature_container support">
+                                    <div class="icon">t</div>
+                                    <div class="title">Support</div>
+                                </div>
+                                <img class="vc_funnel right" src="" />
+                                <img class="vc_funnel left" src="" />
+                                <img class="vc_funnel right small" src="" />
+                                <img class="vc_funnel left small" src="" />
+                                <div class="bank_title">#OneBanc</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="mob_hide divcol" style="vertical-align:top">
+            <img class="bg_cloud_canvas" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIxNjQiIHZpZXdCb3g9IjAgMCAyNSAxNjQiPgogIDxtZXRhZGF0YT48P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzE0MCA3OS4xNjA0NTEsIDIwMTcvMDUvMDYtMDE6MDg6MjEgICAgICAgICI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiLz4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSJ3Ij8+PC9tZXRhZGF0YT4KPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgICBmaWxsLXJ1bGU6IGV2ZW5vZGQ7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIyLjk1NCwwLjEyOVMwLjUyNiwxOC4yLDUuOCw0OC4wODNzOS41NTYsMjIuMzg0LDQuNDE0LDQ4Ljk3NlMtMTMuMjMyLDEyMy4zMzQsMTYuOTI2LDE2N0wxNjMsMTQ1LjA1OSwxMzguNjk0LTE1WiIvPgo8L3N2Zz4K" >
+        </div>
+    </div>
+    <div class="portrait_footer_gutter">&nbsp;</div>
+
+    <script type="text/javascript">
+        var cursorVisible = true;
+        var currentFeatureIndex = 0;
+        var i = 0, crid = -1, ldt = 0;
+        var featureTxtArr = ['CARDS', 'PAYMENTS', 'LOAN', 'SUPPORT', 'REWARDS', 'SAVINGS', 'INVESTMENTS', 'FOREX', 'ANALYTICS'];
+        var isIe = false, isSaf = false;
+
+        window.onload = function () {
+            ldt = this.Date.now() - ldst;
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            if (document.cookie.length > 0)
+                showInviteResponse("Didn't know you'd be back so soon..<br>Welcome Back!", "johny_2")
+            if (isBrowserSupported()) {
+                this.setTimeout(this.bindWriter, 700);
+                this.setTimeout(this.bindSubmit, 2000);
+                animateFeature(featureTxtArr[0].toLowerCase());
+                setInterval(function () {
+                    var cusorDom = document.getElementById('cursor');
+                    if (cursorVisible) {
+                        cusorDom.style.opacity = 0;
+                        cursorVisible = false;
+                    } else {
+                        cusorDom.style.opacity = 1;
+                        cursorVisible = true;
+                    }
+                }, 350);
+
+                document.getElementById('btn_sub').attributes['disabled'] = "false";
+                var domFunnelArr = document.getElementsByClassName("vc_funnel");
+                for (var i = 0; i < domFunnelArr.length; i++)
+                    domFunnelArr[i].src = " data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAACdCAMAAADlslR4AAAAqFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs30iGAAAAN3RSTlMAAwsHYC0czL4UNQ72VBiqjWYl6N/GnYNHQjoQ66KSMeXTs3tybEs/Iu+3iGhOp1ko+tl3IK6YH3KnUgAAAqlJREFUaN7V2Eei4jAQRdEnyzkbEw3GpE+GT2zvf2c97/kd9FlADUpSBQnlHEWyHhrfep4Vx3adI46NGzb8YS6OiaeRQN0+F8jLfIE89yPQo3oINLjGAvnXg0B5tTfi5NfMijOv3EQcp9pF4hh36wuUTQYC7S+eQIdlLFDzZyaQN84EGvypBPLLN/psL5dEHLtdfsSxu3EnkFs0AmXnm0Cz0DXixOc3Gf5RlFacfDxOxEnKjS+OnYw8ccxPMBMoC1yBDsHWivMIyrk4eVjk4iT38CiOLYNYHPN+3QRyh5VA0+HFiNMF90QcPwx9cZJ23Qk0GWYCVaudEWe/Kh1xvOEmEicfrQfizNu6EcdOTr8CuYuJQNNVa8Tx1iNfnChcxQIte/Rsq3RixJnVxVyc4zp4iONsFlNxTPm8GnHcfumIc1iEkTiD0dATZ96mmThm208Eup3QhvgJ0OQnbeoKtGNv/jRFJ83PejETx7n3P+KYXT92xNmfAjL5g+A0FWc+7rcC/Tw3iTjNqo7FmW/Qq6ldXzjizOphLE4epleBJn0RiTOrV4040blHN9xtfyazc1ihRT/69hMrTtWPjuJ4QforjnNhe9ZsMezEScb0sIkebvRlq777DHNx/BE7zP7037k4fnDaC+T2d0ecKEwzgW49uuU6xRO9+3GK/myasi+NOPlwcRDo93lOxLEtW9mOr8VAIDctjDjOmP3cHKzrXKAsHVtx7LLPBMpH9UCgpka3LfNOK4GczSIW6PgKI4GyeiuQWZ6mAjkh2rnUvf5YgdzaFWk5bARyzhtfoMfrYgS6rVyRtkEj0v2Lpj8ZlVYgL7iKdBtNRdqdPZGWrS9Se3FEKiqhir1Q94NQbSdU+RHqnQh1NUL9irUX65/q9t/Fn4nViBUboTw2/l8aezKXklesBAAAAABJRU5ErkJggg==";
+            }
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "ws/cs.asmx/ldlg", true);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.send(JSON.stringify({ ldt: ldt, sw: width, sh: height }));
+            xhttp.onreadystatechange = function () {
+                var rval = parseInt(this.responseText, 10);
+                if (this.readyState == 4 && this.status == 200 && !isNaN(rval))
+                    crid = rval;
+            };
+
+            animateLoader();
+        };
+
+        function bindSubmit() {
+            document.getElementById('btn_sub').addEventListener('click', this.submitInvite);
+        }
+
+        function bindWriter() {
+            var txt = featureTxtArr[currentFeatureIndex];
+            if (i < txt.length) {
+                document.getElementById("feature_txt").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(bindWriter, 110);
+            }
+            else
+                this.setTimeout(this.bindWriterDel, 700);
+        }
+
+        function bindWriterDel() {
+            var txt = featureTxtArr[currentFeatureIndex];
+            if (i > 0) {
+                i--;
+                document.getElementById("feature_txt").innerHTML = txt.substring(0, i);
+                setTimeout(bindWriterDel, 110);
+            } else {
+                currentFeatureIndex++;
+                if (currentFeatureIndex >= featureTxtArr.length)
+                    currentFeatureIndex = 0;
+                animateFeature(featureTxtArr[currentFeatureIndex].toLowerCase());
+                this.setTimeout(this.bindWriter, 700);
+            }
+        }
+
+        function animateFeature(featureClass) {
+            var elemArr = document.getElementsByClassName("selected");
+            var elemArrLen = elemArr.length;
+            for (var i = 0; i < elemArrLen; i++) {
+                removeClass(elemArr[0], "selected");
+            }
+            elemArr = document.getElementsByClassName(featureClass);
+            for (var i = 0; i < elemArr.length; i++) {
+                elemArr[i].className += " selected";
+            }
+        }
+
+        function submitInvite() {
+            var domInpBtn = document.getElementById('btn_sub');
+            var email = document.getElementById('inp_eml').value;
+            var re = new RegExp("^[a-zA-Z0-9]+[a-zA-Z0-9\\._+\\-]*@(?:[a-zA-Z0-9-\\.])+\\.[a-zA-Z]{2,4}$");
+            if (domInpBtn.attributes['disabled'] == "false" && typeof (document.cookie) != "undefined") {
+                if (email.length == 0)
+                    showErr("1");
+                else if (email.length > 64 || re.test(email) == false)
+                    showErr("2");
+                else {
+                    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                    var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                    domInpBtn.attributes['disabled'] = "true";
+                    domInpBtn.className += " loadingstate";
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.open("POST", "ws/cs.asmx/sinv", true);
+                    xhttp.setRequestHeader("Content-Type", "application/json");
+                   
+                    xhttp.onreadystatechange = function () {
+                        domInpBtn.attributes['disabled'] = "false";
+                        var rval = parseInt(this.responseText, 10);
+                        if (this.readyState == 4 && this.status == 200 && !isNaN(rval)) {
+                            var ct = parseInt(rval, 10);
+                            var html = "", cnm = "";
+                            if (ct == 1)
+                                cnm = "johny_1"
+                            else if (ct == 2) {
+                                cnm = "iron_man"
+                                html = "Wait, we will be back soon.";
+                            }
+                            else if (ct >= 3) {
+                                html = "We are on a mission to get back to you soon!";
+                                cnm = "avengers";
+                            }
+                            showInviteResponse(html, cnm);
+                            sveml(email);
+                        } else if (this.readyState != 2 && this.readyState != 3) {
+                            showErr("Poor network connected detected. Check if you are connected to the Internet and come again");
+                            removeClass(domInpBtn, "loadingstate");
+                        }
+                    };
+                }
+            }
+        }
+
+        function showInviteResponse(html, cnm) {
+            var domInviteResponse = document.getElementById("invite_submit_response");
+            if (html.length > 0)
+                domInviteResponse.innerHTML = html;
+            domInviteResponse.className = cnm;
+            domInviteResponse.style.display = "block";
+            var flipper_container = document.getElementById("flipper_container");
+            flipper_container.className +=
+                (isIe || isSaf ? " show" : " flip");
+            setTimeout(function () {
+                document.getElementById("invite_submit_form").style.display = "none";
+            }, isIe || isSaf ? 50 : 600);
+        }
+
+        function showErr(msg) {
+            var domEmlErr = document.getElementById("email_err");
+            var domEmlErrBox = document.getElementById("email_errbox");
+            if (isNaN(msg)) {
+                domEmlErr.innerHTML = msg;
+                domEmlErr.style.display = "block";
+            } else {
+                domEmlErrBox.innerText = (msg == "1" ? "Required" : "Invalid");
+                domEmlErrBox.className = "show";
+            }
+            setTimeout(function () {
+                document.getElementById("email_err").style.display = "none";
+                removeClass(document.getElementById("email_errbox"), "show");
+            }, 5000)
+        }
+
+        function gthc(v) {
+            var h = 0;
+            if (v.length > 0) {
+                for (var i = 0; i < v.length; i++) {
+                    var c = v.charCodeAt(i);
+                    h = ((h << 5) - h) + c;
+                    h = h & h;
+                }
+            }
+            return h;
+        }
+
+        function sveml(v) {
+            var ckExTime = 4;
+            var date = new Date();
+            date.setTime(date.getTime() + (ckExTime * 60 * 1000));
+            document.cookie = (gthc(v).toString() + "; expires=" + date.toGMTString());
+        }
+
+        function isBrowserSupported() {
+            var rval = true;
+            var detectIEregexp = /Trident.*rv[ :]*(\d+\.\d+)/
+            if (navigator.userAgent.indexOf('MSIE') != -1)
+                detectIEregexp = /MSIE (\d+\.\d+);/
+
+            if (detectIEregexp.test(navigator.userAgent)) {
+                isIe = true;
+                var ieversion = new Number(RegExp.$1);
+                if (ieversion < 10) {
+                    document.getElementById("page_container").style.display = "none";
+                    document.getElementById("browser_support").style.display = "block";
+                    rval = false
+                }
+            }
+
+            isSaf = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+            if (isSaf) {
+                document.getElementById("invite_submit_response").style.display = "none";
+            }
+
+            return rval;
+        }
+
+        function animateLoader() {
+            var elemArr = document.getElementsByClassName("dot");
+            var elemArrLen = elemArr.length;
+            setInterval(function () {
+                for (var i = 0; i < elemArrLen; i++) {
+                    var colorClass = elemArr[i].classList[elemArr[i].classList.length - 1];
+                    removeClass(elemArr[i], colorClass);
+                    var count = parseInt(colorClass.replace('c', ''), 10);
+                    elemArr[i].className += " c" + (count == 1 ? 3 : count - 1);
+                }
+            }, 300);
+        }
+
+    </script>
+
+</body>
+</html>
